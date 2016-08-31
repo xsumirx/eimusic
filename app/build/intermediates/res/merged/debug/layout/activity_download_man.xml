@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.elexidea.eimusic.DownloadMan"
+    android:orientation="vertical">
+
+
+    <com.andexert.expandablelayout.library.ExpandableLayout
+        android:id="@+id/expandableLayoutDownloaded"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:el_headerLayout="@layout/saved_header"
+        app:el_contentLayout="@layout/saved_container"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="5dp" />
+
+    <com.andexert.expandablelayout.library.ExpandableLayout
+    android:id="@+id/expandableLayoutDownloading"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:el_headerLayout="@layout/downlading_header"
+    app:el_contentLayout="@layout/downloading_container"/>
+
+
+
+</LinearLayout>
