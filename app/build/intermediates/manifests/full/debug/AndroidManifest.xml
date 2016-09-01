@@ -36,6 +36,7 @@
         <activity android:name="com.elexidea.eimusic.DownloadMan" />
         <activity android:name="com.elexidea.eimusic.Play" />
         <activity android:name="com.elexidea.eimusic.TagEDIT" />
+        <activity android:name="com.elexidea.eimusic.ItunesArt" />
     </application>
 
 </manifest>

@@ -9,4 +9,6 @@
     <color name="darkBlue">#58D3F7</color>
 
     <color name="colorPrimaryLight">#9FA8DA</color>
+
+    <color name="book_loading_book">#303F9F</color>
 </resources>

@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.elexidea.eimusic.DownloadingListFragment">
+
+    <ListView
+        android:id="@+id/downloadingList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="10.0sp"
+        android:divider="@color/cpb_white"></ListView>
+
+
+</FrameLayout>

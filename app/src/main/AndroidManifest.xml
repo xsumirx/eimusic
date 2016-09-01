@@ -31,7 +31,8 @@
         </activity>
         <activity android:name=".DownloadMan" />
         <activity android:name=".Play" />
-        <activity android:name=".TagEDIT"></activity>
+        <activity android:name=".TagEDIT" />
+        <activity android:name=".ItunesArt"></activity>
     </application>
 
 </manifest>

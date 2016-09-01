@@ -36,6 +36,7 @@ import com.google.api.services.youtube.model.Video;
 import com.google.api.services.youtube.model.VideoListResponse;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
+import com.victor.loading.book.BookLoading;
 
 import org.joda.time.format.ISOPeriodFormat;
 
@@ -51,6 +52,7 @@ import java.util.zip.Inflater;
 public class MainActivity extends Activity {
 
 
+    BookLoading bookLoading;
     ImageButton btnDownloadMan;
     TextView textViewStatus;
     ImageButton btnSearch;
@@ -75,6 +77,9 @@ public class MainActivity extends Activity {
 
         GlobalData.getInstance().init(getApplicationContext());
         ActionBar bar = null;//get();
+        bookLoading = (BookLoading)findViewById(R.id.bookloading);
+        bookLoading.setVisibility(View.GONE);
+        bookLoading.invalidate();
         if(bar != null)
         {
             bar.setDisplayShowHomeEnabled(false);
@@ -129,6 +134,9 @@ public class MainActivity extends Activity {
                         }
                         s = new Searcher();
                         s.execute(new QueryItem(queryText.getText().toString(),1));
+                    bookLoading.setVisibility(View.VISIBLE);
+                    bookLoading.start();
+                    bookLoading.invalidate();
                    // }
                 }
             }
@@ -264,6 +272,9 @@ public class MainActivity extends Activity {
                 }
                 case 1:
                 {
+                    bookLoading.setVisibility(View.GONE);
+                    bookLoading.stop();
+                    bookLoading.invalidate();
                     textViewStatus.setText(data.size() + " items found");
                     searchAdapter.notifyDataSetChanged();
                     break;

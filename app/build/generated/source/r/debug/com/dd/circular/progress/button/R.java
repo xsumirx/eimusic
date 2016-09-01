@@ -24,20 +24,20 @@ public final class R {
 		public static final int cpb_textProgress = 0x7f0100b5;
 	}
 	public static final class color {
-		public static final int cpb_blue = 0x7f0b0016;
-		public static final int cpb_blue_dark = 0x7f0b0017;
-		public static final int cpb_complete_state_selector = 0x7f0b005d;
-		public static final int cpb_error_state_selector = 0x7f0b005e;
-		public static final int cpb_green = 0x7f0b0018;
-		public static final int cpb_green_dark = 0x7f0b0019;
-		public static final int cpb_grey = 0x7f0b001a;
-		public static final int cpb_idle_state_selector = 0x7f0b005f;
-		public static final int cpb_red = 0x7f0b001b;
-		public static final int cpb_red_dark = 0x7f0b001c;
-		public static final int cpb_white = 0x7f0b001d;
+		public static final int cpb_blue = 0x7f0b0019;
+		public static final int cpb_blue_dark = 0x7f0b001a;
+		public static final int cpb_complete_state_selector = 0x7f0b0060;
+		public static final int cpb_error_state_selector = 0x7f0b0061;
+		public static final int cpb_green = 0x7f0b001b;
+		public static final int cpb_green_dark = 0x7f0b001c;
+		public static final int cpb_grey = 0x7f0b001d;
+		public static final int cpb_idle_state_selector = 0x7f0b0062;
+		public static final int cpb_red = 0x7f0b001e;
+		public static final int cpb_red_dark = 0x7f0b001f;
+		public static final int cpb_white = 0x7f0b0020;
 	}
 	public static final class dimen {
-		public static final int cpb_stroke_width = 0x7f08004d;
+		public static final int cpb_stroke_width = 0x7f08004f;
 	}
 	public static final class drawable {
 		public static final int cpb_background = 0x7f02004b;

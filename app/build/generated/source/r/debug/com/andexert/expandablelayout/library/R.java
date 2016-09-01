@@ -12,22 +12,22 @@ public final class R {
 		public static final int expandable_show = 0x7f050011;
 	}
 	public static final class attr {
-		public static final int el_contentLayout = 0x7f0100ee;
-		public static final int el_duration = 0x7f0100ef;
-		public static final int el_headerLayout = 0x7f0100ed;
+		public static final int el_contentLayout = 0x7f0100ef;
+		public static final int el_duration = 0x7f0100f0;
+		public static final int el_headerLayout = 0x7f0100ee;
 	}
 	public static final class id {
-		public static final int view_expandable_contentLayout = 0x7f0c009d;
-		public static final int view_expandable_headerlayout = 0x7f0c009c;
+		public static final int view_expandable_contentLayout = 0x7f0c00aa;
+		public static final int view_expandable_headerlayout = 0x7f0c00a9;
 	}
 	public static final class layout {
-		public static final int view_expandable = 0x7f04003e;
+		public static final int view_expandable = 0x7f040042;
 	}
 	public static final class string {
 		public static final int app_name = 0x7f060014;
 	}
 	public static final class styleable {
-		public static final int[] ExpandableLayout = { 0x7f0100ed, 0x7f0100ee, 0x7f0100ef };
+		public static final int[] ExpandableLayout = { 0x7f0100ee, 0x7f0100ef, 0x7f0100f0 };
 		public static final int ExpandableLayout_el_contentLayout = 1;
 		public static final int ExpandableLayout_el_duration = 2;
 		public static final int ExpandableLayout_el_headerLayout = 0;
