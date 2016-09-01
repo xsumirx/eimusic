@@ -1,7 +1,19 @@
 [
     {
+        "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_album_24dp.png",
+        "source": "C:\\projet1\\App\\EIMusic\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_album_24dp.png"
+    },
+    {
         "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_file_download_24dp.png",
         "source": "C:\\projet1\\App\\EIMusic\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_file_download_24dp.png"
+    },
+    {
+        "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_save_24dp.png",
+        "source": "C:\\projet1\\App\\EIMusic\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_save_24dp.png"
+    },
+    {
+        "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_arrow_back_24dp.png",
+        "source": "C:\\projet1\\App\\EIMusic\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_arrow_back_24dp.png"
     },
     {
         "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_search_24dp.png",

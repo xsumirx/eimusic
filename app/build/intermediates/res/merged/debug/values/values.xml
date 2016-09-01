@@ -33,6 +33,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryLight">#9FA8DA</color>
     <color name="cpb_blue">#ff0099cc</color>
     <color name="cpb_blue_dark">#ff00719b</color>
     <color name="cpb_green">#ff99cc00</color>
@@ -301,6 +302,7 @@
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="define_circularprogressbutton">circularprogressbutton</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="library_circularprogressbutton_author">Dmytro Danylyk</string>
     <string name="library_circularprogressbutton_authorWebsite">http://dmytrodanylyk.com/</string>
     <string name="library_circularprogressbutton_isOpenSource">true</string>

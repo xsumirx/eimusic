@@ -17,11 +17,11 @@ public final class R {
 		public static final int el_headerLayout = 0x7f0100ed;
 	}
 	public static final class id {
-		public static final int view_expandable_contentLayout = 0x7f0c0099;
-		public static final int view_expandable_headerlayout = 0x7f0c0098;
+		public static final int view_expandable_contentLayout = 0x7f0c009d;
+		public static final int view_expandable_headerlayout = 0x7f0c009c;
 	}
 	public static final class layout {
-		public static final int view_expandable = 0x7f04003f;
+		public static final int view_expandable = 0x7f04003e;
 	}
 	public static final class string {
 		public static final int app_name = 0x7f060014;

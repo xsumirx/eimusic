@@ -7,4 +7,6 @@
     <color name="darkYello">#D7DF01</color>
     <color name="darkGreen">#04B404</color>
     <color name="darkBlue">#58D3F7</color>
+
+    <color name="colorPrimaryLight">#9FA8DA</color>
 </resources>

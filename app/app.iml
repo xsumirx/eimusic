@@ -113,5 +113,6 @@
     <orderEntry type="library" exported="" name="support-v4-23.4.0" level="project" />
     <orderEntry type="library" exported="" name="gson-2.0" level="project" />
     <orderEntry type="library" exported="" name="joda-time-2.9.4" level="project" />
+    <orderEntry type="library" exported="" name="mp3agic-0.8.4" level="project" />
   </component>
 </module>
