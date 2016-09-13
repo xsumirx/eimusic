@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageButton
+                android:id="@+id/imgButtonTagEditorBack"
                 android:background="@color/colorPrimaryDark"
                 android:src="@drawable/ic_arrow_back_24dp"
                 android:layout_width="48dp"
@@ -41,6 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageButton
+                android:id="@+id/imgButtonTagEditorSave"
                 android:background="@color/colorPrimaryDark"
                 android:src="@drawable/ic_save_24dp"
                 android:layout_width="48dp"
@@ -82,6 +84,7 @@
                     android:layout_height="match_parent">
 
                     <Button
+                        android:id="@+id/btnTagEditGallery"
                         android:layout_marginTop="5dp"
                         android:textColor="@color/cpb_white"
                         android:background="@color/colorPrimaryDark"
@@ -98,6 +101,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                     <Button
+                        android:id="@+id/btnTagEditLastFM"
                         android:layout_marginTop="5dp"
                         android:textColor="@color/cpb_white"
                         android:background="@color/colorPrimaryDark"
@@ -106,6 +110,7 @@
                         android:layout_height="wrap_content" />
 
                     <CheckBox
+                        android:id="@+id/checkboxTagEditRemoveArt"
                         android:layout_marginTop="5dp"
                         android:text="Remove Art"
                         android:layout_width="match_parent"
@@ -127,17 +132,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
                 <EditText
+                    android:id="@+id/txtEditTagEditTitle"
                     android:hint="title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
                 <TextView
+
                     android:layout_marginTop="10dp"
                     android:textColor="@color/colorPrimaryDark"
                     android:text="Artist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
                 <EditText
+                    android:id="@+id/txtEditTagEditArtist"
                     android:hint="artist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -151,6 +159,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
                 <EditText
+                    android:id="@+id/txtEditTagEditAlbum"
                     android:hint="album"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />

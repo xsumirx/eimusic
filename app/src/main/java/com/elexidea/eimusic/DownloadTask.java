@@ -76,7 +76,7 @@ public class DownloadTask implements Runnable {
 
                 File path = Environment.getExternalStoragePublicDirectory(
                         Environment.DIRECTORY_DOWNLOADS);
-                File f = new File(path, "/" + downloadObject.fileName);
+                File f = new File(downloadObject.location + "/" + downloadObject.fileName);
                 // opens an output stream to save into file
                 if(f.exists())
                 {

@@ -14,7 +14,7 @@ public class SavedObject implements Serializable {
     public SavedObject(String _name,int _size,String _location)
     {
         fileName = _name;
-        _location = location;
+        location = _location;
         size = _size;
     }
 }

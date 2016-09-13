@@ -1,6 +1,9 @@
 package com.elexidea.eimusic;
 
 import android.content.Context;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 
 import com.google.api.services.youtube.YouTube;
 
@@ -21,10 +24,15 @@ import java.util.List;
 public class GlobalData {
     private static GlobalData ourInstance = new GlobalData();
 
+    public static RotateAnimation anim = new RotateAnimation(0.0f, 360.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+
+
+
     public static GlobalData getInstance() {
         return ourInstance;
     }
 
+    public List<SearchItem> data;
     private GlobalData() {
 
     }
@@ -34,6 +42,14 @@ public class GlobalData {
         mContext = _mContext;
         listDownloading = popDownloadingList();
         listSavedObject = popSavedList();
+
+        //Setup anim with desired properties
+        anim.setInterpolator(new LinearInterpolator());
+        anim.setRepeatCount(Animation.INFINITE); //Repeat animation indefinitely
+        anim.setDuration(700); //Put desired duration per anim cycle here, in milliseconds
+
+        if (data == null)
+            data = new ArrayList<>();
     }
 
     public List<DownloadObject> listDownloading;

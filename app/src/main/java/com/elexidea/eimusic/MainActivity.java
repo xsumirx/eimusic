@@ -1,12 +1,16 @@
 package com.elexidea.eimusic;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +27,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.youtube.player.YouTubePlayerView;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
@@ -49,6 +54,8 @@ import java.util.List;
 import java.util.Properties;
 import java.util.zip.Inflater;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends Activity {
 
 
@@ -63,10 +70,12 @@ public class MainActivity extends Activity {
     Searcher s;
 
 
-    List<SearchItem> data;
+
+
+
 
     private static final String PROPERTIES_FILENAME = "youtube.properties";
-    private static final long NUMBER_OF_VIDEOS_RETURNED = 25;
+    private static final long NUMBER_OF_VIDEOS_RETURNED = 50;
     private static YouTube youtube;
 
 
@@ -91,7 +100,7 @@ public class MainActivity extends Activity {
 
 
         //Hold data into it
-        data = new ArrayList<>();
+
         searchAdapter = new ListAdpater(getApplicationContext());
 
 
@@ -123,21 +132,20 @@ public class MainActivity extends Activity {
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!queryText.getText().toString().replace(" ","").equals("")) {
+                if (!queryText.getText().toString().replace(" ", "").equals("")) {
                     //if (!isBusy) {
-                        isBusy = true;
-                        //s.cancel(true);
-                        if(s != null)
-                        {
-                            s.cancel(true);
-                            s = null;
-                        }
-                        s = new Searcher();
-                        s.execute(new QueryItem(queryText.getText().toString(),1));
+                    isBusy = true;
+                    //s.cancel(true);
+                    if (s != null) {
+                        s.cancel(true);
+                        s = null;
+                    }
+                    s = new Searcher();
+                    s.execute(new QueryItem(queryText.getText().toString(), 1));
                     bookLoading.setVisibility(View.VISIBLE);
                     bookLoading.start();
                     bookLoading.invalidate();
-                   // }
+                    // }
                 }
             }
         });
@@ -146,17 +154,23 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(MainActivity.this, "Download manager Comming Soon", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getApplicationContext(),DownloadMan.class);
+                Intent i = new Intent(getApplicationContext(), DownloadMan.class);
                 startActivity(i);
             }
         });
+
+
+
     }
+
+
+
 
 
     public AdapterView.OnItemClickListener searchViewResultListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            SearchItem tempSearchItem = (SearchItem)data.get(position);
+            SearchItem tempSearchItem = (SearchItem)GlobalData.getInstance().data.get(position);
             Intent intent = new Intent(getApplicationContext(),VideoDetail.class);
             intent.putExtra(Constants.VIDEO_ID_BUNDLE_KEY, tempSearchItem.vidId);
             intent.putExtra(Constants.VIDEO_TITLE_BUNDLE_KEY,tempSearchItem.title);
@@ -173,22 +187,23 @@ public class MainActivity extends Activity {
         protected List<SearchResult> doInBackground(QueryItem... params) {
 
             try {
-                data.clear();
+                GlobalData.getInstance().data.clear();
                 publishProgress(0);
                 String queryTerm = params[0].getQuery();
                 YouTube.Search.List search = youtube.search().list("id,snippet");
-                String apiKey = "AIzaSyBFbvjjVhraRZGY_5WiVkx7lUNB-uVgBRI";
-                search.setKey(apiKey);
+
+                search.setKey(Constants.apiKey);
                 search.setQ(queryTerm);
                 search.setType("video");
-                search.setFields("items(id/kind,id/videoId,snippet/title,snippet/thumbnails/default/url)");
+                search.setFields("items(id/kind,id/videoId,snippet/title,snippet/thumbnails/default/url,snippet/channelTitle)");
                 search.setMaxResults(NUMBER_OF_VIDEOS_RETURNED);
+
 
 
                 YouTube.Videos.List videoListSearch = youtube.videos().list("contentDetails");
                 videoListSearch.setMaxResults(NUMBER_OF_VIDEOS_RETURNED);
                 videoListSearch.setFields("items(id,contentDetails/duration)");
-                videoListSearch.setKey(apiKey);
+                videoListSearch.setKey(Constants.apiKey);
 
                 String ids = "";
 
@@ -202,19 +217,19 @@ public class MainActivity extends Activity {
                         for(SearchResult s:searchResponse.getItems())
                         {
                             if (s.getId().getKind().equals("youtube#video")) {
-                                data.add(new SearchItem(s, s.getSnippet().getTitle(),s.getId().getVideoId()));
+                                GlobalData.getInstance().data.add(new SearchItem(s, s.getSnippet().getTitle(),s.getId().getVideoId()));
                                 ids += s.getId().getVideoId() + ",";
                             }
                         }
                     }
                 }
 
-                if (data.size() > 0) {
+                if (GlobalData.getInstance().data.size() > 0) {
                     //Just Removed Everything from Existing List, Cause its a new Query
                     publishProgress(1);
 
 
-                    videoListSearch.setId(ids);
+                    videoListSearch.setId(ids.substring(0,ids.length()-2));
                     VideoListResponse videoListSearchResponse = videoListSearch.execute();
                     if(videoListSearchResponse != null)
                     {
@@ -223,9 +238,9 @@ public class MainActivity extends Activity {
                             int i = 0;
                             for(Video vid:videoListSearchResponse.getItems())
                             {
-                                if(vid.getId().equals(data.get(i).searchResult.getId().getVideoId()))
+                                if(vid.getId().equals(GlobalData.getInstance().data.get(i).searchResult.getId().getVideoId()))
                                 {
-                                    data.get(i).duration = vid.getContentDetails().getDuration();
+                                    GlobalData.getInstance().data.get(i).duration = vid.getContentDetails().getDuration();
                                     publishProgress(2);
                                 }
                                 i++;
@@ -235,11 +250,12 @@ public class MainActivity extends Activity {
 
 
 
-                    for(SearchItem item:data)
+                    for(SearchItem item:GlobalData.getInstance().data)
                     {
                         Thumbnail thumbnail = item.searchResult.getSnippet().getThumbnails().getDefault();
                         Bitmap bitmap = BitmapFactory.decodeStream((InputStream) new URL(thumbnail.getUrl()).getContent());
                         item.thumbnail = bitmap;
+                        item.shouldAnimate = false;
                         publishProgress(2);
                     }
                 }
@@ -250,10 +266,13 @@ public class MainActivity extends Activity {
             } catch (GoogleJsonResponseException e) {
                 System.err.println("There was a service error: " + e.getDetails().getCode() + " : "
                         + e.getDetails().getMessage());
+                publishProgress(4);
             } catch (IOException e) {
                 System.err.println("There was an IO error: " + e.getCause() + " : " + e.getMessage());
+                publishProgress(4);
             } catch (Throwable t) {
                 t.printStackTrace();
+                publishProgress(4);
             }
 
 
@@ -275,18 +294,27 @@ public class MainActivity extends Activity {
                     bookLoading.setVisibility(View.GONE);
                     bookLoading.stop();
                     bookLoading.invalidate();
-                    textViewStatus.setText(data.size() + " items found");
+                    textViewStatus.setText(GlobalData.getInstance().data.size() + " items found");
                     searchAdapter.notifyDataSetChanged();
                     break;
                 }
                 case 2:
                 {
+
                     searchAdapter.notifyDataSetChanged();
                     break;
                 }
                 case 3:
                 {
                     textViewStatus.setText("Nothing Found...");
+                    break;
+                }
+                case 4:
+                {
+                    textViewStatus.setText("Error Occured ! Contact Developer");
+                    bookLoading.setVisibility(View.GONE);
+                    bookLoading.stop();
+                    bookLoading.invalidate();
                     break;
                 }
                 default:
@@ -337,7 +365,7 @@ public class MainActivity extends Activity {
     {
         public TextView title;
         public TextView artist;
-        public ImageView thumbnail;
+        public CircleImageView thumbnail;
         public TextView duration;
         public TextView size;
     }
@@ -354,12 +382,12 @@ public class MainActivity extends Activity {
 
         @Override
         public int getCount() {
-            return data.size();
+            return GlobalData.getInstance().data.size();
         }
 
         @Override
         public Object getItem(int position) {
-            return data.get(position);
+            return GlobalData.getInstance().data.get(position);
         }
 
         @Override
@@ -380,7 +408,7 @@ public class MainActivity extends Activity {
                 holder.artist = (TextView) convertView.findViewById(R.id.txtViewArtistItem);
                 holder.duration = (TextView) convertView.findViewById(R.id.txtViewDurationItem);
                 holder.size = (TextView) convertView.findViewById(R.id.txtViewSizeItem);
-                holder.thumbnail = (ImageView) convertView.findViewById(R.id.imgViewThumbnailItem);
+                holder.thumbnail = (CircleImageView) convertView.findViewById(R.id.imgViewThumbnailItem);
                 convertView.setTag(holder);
             }
             else {
@@ -391,10 +419,38 @@ public class MainActivity extends Activity {
 
             holder.title.setText(rowItem.title);
             holder.artist.setText(rowItem.searchResult.getSnippet().getChannelTitle());
-            holder.duration.setText(rowItem.duration);
+            //Timer parsing
+            String LocalFormat = rowItem.duration.replace("PT","").replace("H",":").replace("M",":").replace("S", "");
+            String[] sep = LocalFormat.split(":");
+            LocalFormat = "";
+            if(sep.length == 1)
+            {
+                LocalFormat = String.valueOf(sep[0]) + " sec";
+            }else if(sep.length == 2)
+            {
+                LocalFormat = String.valueOf(sep[0]) + " mins " + String.valueOf(sep[1]) + " sec";
+            }else if(sep.length == 3)
+            {
+                LocalFormat = String.valueOf(sep[0]) + " hours " +String.valueOf(sep[1]) + " mins " + String.valueOf(sep[2]) + " sec";
+            }else
+            {
+                LocalFormat = "Unknown Duration";
+            }
+
+            holder.duration.setText(LocalFormat);
             holder.size.setText("");
-            if(rowItem.thumbnail != null)
+            holder.artist.setText(rowItem.artist);
+            if(rowItem.thumbnail != null) {
+                holder.thumbnail.setAnimation(null);
                 holder.thumbnail.setImageBitmap(rowItem.thumbnail);
+                rowItem.shouldAnimate = false;
+            }else
+            {
+
+                holder.thumbnail.setImageResource(R.drawable.loadingsymbol);
+                holder.thumbnail.startAnimation(GlobalData.anim);
+            }
+
 
             return convertView;
         }

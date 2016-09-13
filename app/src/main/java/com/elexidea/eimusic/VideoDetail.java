@@ -1,5 +1,6 @@
 package com.elexidea.eimusic;
 
+import android.Manifest;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.DownloadManager;
@@ -7,12 +8,15 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.os.SystemClock;
 import android.provider.Settings;
 import android.renderscript.Element;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -25,6 +29,9 @@ import android.widget.Toast;
 import com.dd.CircularProgressButton;
 import com.fasterxml.jackson.core.JsonParser;
 import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerView;
 import com.google.api.client.http.HttpResponse;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -37,10 +44,11 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.zip.Inflater;
 
-public class VideoDetail extends Activity {
+public class VideoDetail extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
     Button btnDownloadMP3;
     TextView txtViewVideoID;
@@ -49,6 +57,17 @@ public class VideoDetail extends Activity {
     CircularProgressButton btnWithText;
     GlobalData globalData;
     String downloadUrl = "";
+
+    final static int REQUEST_WRITE  = 1;
+    final static int REQUEST_READ = 2;
+
+    boolean isAllowedRead;
+    boolean isAllowedWrite;
+
+    private static final int RECOVERY_DIALOG_REQUEST = 1;
+
+    // YouTube player view
+    private YouTubePlayerView youTubeView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +81,10 @@ public class VideoDetail extends Activity {
         btnWithText = (CircularProgressButton)findViewById(R.id.btnWithText);
         btnWithText.setIndeterminateProgressMode(true);
         btnWithText.setProgress(0);
+
+        isAllowedRead = true;
+        isAllowedWrite = true;
+
 
         btnWithText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,6 +135,106 @@ public class VideoDetail extends Activity {
         videoTitle = b.getString(Constants.VIDEO_TITLE_BUNDLE_KEY);
         txtViewVideoID.setText(b.getString(Constants.VIDEO_TITLE_BUNDLE_KEY));
         registerReceiver(receiver, new IntentFilter(Constants.BROADCAST_LINK_GENRATED));
+
+
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            isAllowedWrite = false;
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+
+                // Show an expanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+
+            } else {
+
+                // No explanation needed, we can request the permission.
+
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        REQUEST_WRITE);
+
+                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                // app-defined int constant. The callback method gets the
+                // result of the request.
+            }
+        }
+
+
+
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            isAllowedRead = false;
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.READ_EXTERNAL_STORAGE)) {
+
+                // Show an expanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+
+            } else {
+
+                // No explanation needed, we can request the permission.
+
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                        REQUEST_READ);
+
+                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                // app-defined int constant. The callback method gets the
+                // result of the request.
+            }
+        }
+
+        youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
+        // Initializing video player with developer key
+        youTubeView.initialize(Constants.apiKey,this);
+
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_WRITE: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+                    isAllowedWrite = true;
+
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                }
+                break;
+            }
+            case REQUEST_READ:
+            {
+
+                if ((grantResults.length >0) && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                {
+                    isAllowedRead = true;
+                }
+
+                break;
+            }
+            default:break;
+
+            // other 'case' lines to check for other
+            // permissions this app might request
+        }
     }
 
 
@@ -132,15 +255,42 @@ public class VideoDetail extends Activity {
             finish();
             */
 
+            if(!isAllowedRead || !isAllowedWrite) {
+                Toast.makeText(VideoDetail.this, "You Denied File Permission ! Restart App", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            
+
 
             String link = intent.getStringExtra(Constants.DOWNLOAD_LINK);
             String tempUrl = Uri.decode(link);
-            DownloadObject object = new DownloadObject(Environment.DIRECTORY_DOWNLOADS,tempUrl);
+            DownloadObject object = new DownloadObject(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath(),tempUrl);
             object.thread = new Thread(new DownloadTask(object));
             globalData.listDownloading.add(object);
             object.thread.start();
         }
     };
+
+    @Override
+    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+        if (!b) {
+
+            // loadVideo() will auto play video
+            // Use cueVideo() method, if you don't want to play it automatically
+            youTubePlayer.cueVideo(videoID);
+
+            // Hiding player controls
+            //youTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.CHROMELESS);
+        }
+
+    }
+
+    @Override
+    public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+
+    }
+
+
 
     class DownloadAsync extends AsyncTask<String,String,String>
     {

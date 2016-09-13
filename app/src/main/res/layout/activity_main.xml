@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#e8eaf6"
     tools:context="com.elexidea.eimusic.MainActivity"
     android:orientation="vertical">
 
@@ -21,6 +22,7 @@
             android:layout_height="48dp" />
 
         <EditText
+            android:singleLine="true"
             android:maxLines="1"
             android:layout_toRightOf="@+id/btnDownloadManager"
             android:layout_toLeftOf="@+id/btnSearch"
@@ -56,6 +58,9 @@
 
 
     <ListView
+        android:layout_margin="10dp"
+        android:dividerHeight="10.0sp"
+        android:divider="#e8eaf6"
         android:layout_below="@+id/textViewStatus"
         android:id="@+id/listViewSearchResult"
         android:layout_width="match_parent"
@@ -67,6 +72,7 @@
 
     <com.victor.loading.book.BookLoading
 
+        android:background="#e8eaf6"
         android:id="@+id/bookloading"
         android:layout_width="150dp"
         android:layout_height="100dp"

@@ -8,11 +8,11 @@ package com.victor.loading;
 
 public final class R {
 	public static final class attr {
-		public static final int cradle_ball_color = 0x7f0100d4;
-		public static final int loading_color = 0x7f01010c;
-		public static final int loading_speed = 0x7f01010e;
-		public static final int loading_width = 0x7f01010b;
-		public static final int shadow_position = 0x7f01010d;
+		public static final int cradle_ball_color = 0x7f0100d8;
+		public static final int loading_color = 0x7f010110;
+		public static final int loading_speed = 0x7f010112;
+		public static final int loading_width = 0x7f01010f;
+		public static final int shadow_position = 0x7f010111;
 	}
 	public static final class color {
 		public static final int book_loading_background = 0x7f0b000a;
@@ -25,11 +25,11 @@ public final class R {
 		public static final int page_border = 0x7f080071;
 	}
 	public static final class id {
-		public static final int ball_five = 0x7f0c009b;
-		public static final int ball_four = 0x7f0c009a;
-		public static final int ball_one = 0x7f0c0097;
-		public static final int ball_three = 0x7f0c0099;
-		public static final int ball_two = 0x7f0c0098;
+		public static final int ball_five = 0x7f0c00a4;
+		public static final int ball_four = 0x7f0c00a3;
+		public static final int ball_one = 0x7f0c00a0;
+		public static final int ball_three = 0x7f0c00a2;
+		public static final int ball_two = 0x7f0c00a1;
 	}
 	public static final class layout {
 		public static final int book_loading = 0x7f040020;
@@ -39,9 +39,9 @@ public final class R {
 		public static final int app_name = 0x7f060014;
 	}
 	public static final class styleable {
-		public static final int[] CradleBall = { 0x7f0100d4 };
+		public static final int[] CradleBall = { 0x7f0100d8 };
 		public static final int CradleBall_cradle_ball_color = 0;
-		public static final int[] RotateLoading = { 0x7f01010b, 0x7f01010c, 0x7f01010d, 0x7f01010e };
+		public static final int[] RotateLoading = { 0x7f01010f, 0x7f010110, 0x7f010111, 0x7f010112 };
 		public static final int RotateLoading_loading_color = 1;
 		public static final int RotateLoading_loading_speed = 3;
 		public static final int RotateLoading_loading_width = 0;

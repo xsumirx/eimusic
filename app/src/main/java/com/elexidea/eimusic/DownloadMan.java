@@ -108,11 +108,5 @@ public class DownloadMan extends Activity {
                 }
             }
         });
-
-
     }
-
-
-
-
 }

@@ -18,6 +18,8 @@ import android.widget.TextView;
 
 import com.github.lzyzsd.circleprogress.DonutProgress;
 
+import java.io.File;
+
 
 public class DownloadingListFragment extends Fragment {
 
@@ -54,16 +56,14 @@ public class DownloadingListFragment extends Fragment {
         TextView emptyView = new TextView(getActivity());
         emptyView.setText("No Active Downloadings");
         downList.setEmptyView(emptyView);
-
-
-
         registerForContextMenu(downList);
 
         downList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //downList.showContextMenu();
-
+                downList.setTag(position);
+                downList.showContextMenu();
             }
         });
 
@@ -113,9 +113,6 @@ public class DownloadingListFragment extends Fragment {
         if(v.getId() == R.id.downloadingList) {
             TextView view = (TextView) v.findViewById(R.id.txtViewitemDownloadingListStatus);
             menu.add(0, v.getId(), 0, "Delete");//groupId, itemId, order, title
-        }else if(v.getId() == R.id.savedList)
-        {
-            menu.add(0, v.getId(), 0, "Edit");//groupId, itemId, order, title
         }
     }
 
@@ -124,16 +121,29 @@ public class DownloadingListFragment extends Fragment {
         if(item.getTitle()=="Delete"){
 
             AdapterView.AdapterContextMenuInfo minfo = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
+            int tempPosition = -1;
+            if(minfo == null)
+            {
+                tempPosition = (Integer)downList.getTag();
+            }else
+            {
+                tempPosition = minfo.position;
+            }
+            if(tempPosition != -1) {
+                try {
+                    File musicFile2Delete = new File(GlobalData.getInstance().listDownloading.get(tempPosition).location+"/"+GlobalData.getInstance().listDownloading.get(tempPosition).fileName);
+                    if (musicFile2Delete.exists()) {
+                        musicFile2Delete.delete();
+                    }
+                    GlobalData.getInstance().listDownloading.remove(tempPosition);
+                    GlobalData.getInstance().pushDownloadingList();
+                    adpater.notifyDataSetChanged();
+                }catch (Exception ex)
+                {
+                    ex.printStackTrace();
+                }
+            }
 
-            //globalData.listDownloading.remove(selectedDownloadingListPostion);
-            //adpater.notifyDataSetChanged();
-
-        }else if(item.getTitle() == "Edit")
-        {
-            AdapterView.AdapterContextMenuInfo minfo = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
-            Intent i = new Intent(getActivity().getApplicationContext(),TagEDIT.class);
-            i.putExtra("INDEX",minfo.position);
-            startActivity(i);
         }else{
             return false;
         }
@@ -209,19 +219,16 @@ public class DownloadingListFragment extends Fragment {
             if(rowItem.STATUS == 1)
             {
                 //Downloading
-                holder.donutProgress.setFinishedStrokeColor(R.color.darkGreen);
+                holder.donutProgress.setUnfinishedStrokeColor(R.color.darkGreen);
                 holder.status.setText("Downloading");
-            }else if(rowItem.STATUS == 0)
-            {
+            }else if(rowItem.STATUS == 0) {
                 //Finished
                 holder.status.setText("Finished");
-                holder.donutProgress.setFinishedStrokeColor(R.color.darkBlue);
-
-            }else
-            {
+                holder.donutProgress.setUnfinishedStrokeColor(R.color.darkBlue);
+            }else {
                 //Error
                 holder.status.setText("Error");
-                holder.donutProgress.setFinishedStrokeColor(R.color.darkYello);
+                holder.donutProgress.setUnfinishedStrokeColor(R.color.darkYello);
             }
 
             return convertView;

@@ -20,6 +20,8 @@ public class SearchItem {
     public String duration;
     public String vidId;
     private String mp3url;
+    public String artist;
+    public boolean shouldAnimate;
 
     public SearchItem(SearchResult _item,String _title,String _id)
     {
@@ -28,6 +30,8 @@ public class SearchItem {
         thumbnail = null;
         duration = "";
         vidId = _id;
+        artist  = _item.getSnippet().getChannelTitle();
+        shouldAnimate = true;
     }
 
     public void setMP3Url(String _mp3Url)

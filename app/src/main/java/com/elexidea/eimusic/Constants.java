@@ -20,4 +20,6 @@ public class Constants {
     public final static int DOWNLOAD_STATUS_FAILED = -1;
     public final static int DOWNLOAD_STATUS_RUNNING = 1;
 
+    final static String apiKey = "AIzaSyBFbvjjVhraRZGY_5WiVkx7lUNB-uVgBRI";
+
 }
