@@ -1,0 +1,58 @@
+[
+    {
+        "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\release\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\release\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_search_url_text.xml",
+        "source": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\release\\color\\cpb_error_state_selector.xml",
+        "source": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\exploded-aar\\com.github.dmytrodanylyk.circular-progress-button\\library\\1.1.3\\res\\color\\cpb_error_state_selector.xml"
+    },
+    {
+        "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\release\\color\\cpb_idle_state_selector.xml",
+        "source": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\exploded-aar\\com.github.dmytrodanylyk.circular-progress-button\\library\\1.1.3\\res\\color\\cpb_idle_state_selector.xml"
+    },
+    {
+        "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\release\\color\\cpb_complete_state_selector.xml",
+        "source": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\exploded-aar\\com.github.dmytrodanylyk.circular-progress-button\\library\\1.1.3\\res\\color\\cpb_complete_state_selector.xml"
+    },
+    {
+        "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\res\\merged\\release\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\projet1\\App\\EIMusic\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_secondary_text_material_dark.xml"
+    }
+]

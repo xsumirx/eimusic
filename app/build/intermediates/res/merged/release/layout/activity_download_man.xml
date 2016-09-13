@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.elexidea.eimusic.DownloadMan"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:gravity="center"
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/downloadManInner2"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Download Manager"
+            android:gravity="center"
+            android:textColor="@color/cpb_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_below="@+id/downloadManInner2"
+        android:id="@+id/downloadManContainer"
+        android:layout_above="@+id/downloadManInner1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/downloadManInner1"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <Button
+            android:id="@+id/btnDownloadManDownloading"
+            android:layout_weight="1"
+            android:text="Downloading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/btnDownloadSaved"
+            android:layout_weight="1"
+            android:text="Saved"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

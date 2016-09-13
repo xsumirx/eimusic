@@ -1,3 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\projet1\App\EIMusic\app\build\intermediates\exploded-aar\com.github.traex.expandablelayout\library\1.3\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="2d1cd4e6ef2b9b02b939c273dea7ce3c75b25734">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\com.github.traex.expandablelayout-library-1.3_a08839679009e184a7874b16cb6338f1b9e7b3e4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sumir\.gradle\caches\modules-2\files-2.1\com.google.apis\google-api-services-youtube\v3-rev178-1.22.0\920cb88d6883eb13b5c4d0a4af342cb6a61cd249\google-api-services-youtube-v3-rev178-1.22.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="920cb88d6883eb13b5c4d0a4af342cb6a61cd249">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\google-api-services-youtube-v3-rev178-1.22.0_4e0ea264f6e163a00b4a6fe7a3689027a8ee61ed.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sumir\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.1.3\f6c3aed1cdfa21b5c1737c915186ea93a95a58bd\jackson-core-2.1.3.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="f6c3aed1cdfa21b5c1737c915186ea93a95a58bd">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\jackson-core-2.1.3_7ef1ec79b5c361d969332d4b608d86a3cf9dba5a.jar" />
+    </item>
+    <item
+        jar="C:\projet1\App\EIMusic\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\internal_impl-23.4.0_c1e4d38107f1e49ba9707800569d08ab0109cc9d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sumir\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\support-annotations-23.4.0_33230d38960ee012c5c3188dce16bb7ac05980b3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sumir\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-jackson2\1.22.0\cc014d64ae11117e159d334c99d9c246d9b36f44\google-http-client-jackson2-1.22.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="cc014d64ae11117e159d334c99d9c246d9b36f44">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\google-http-client-jackson2-1.22.0_b6fa9876cd37a261f5afbee75a5fc90050179b70.jar" />
+    </item>
+    <item
+        jar="C:\projet1\App\EIMusic\app\libs\joda-time-2.9.4.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1c295b462f16702ebe720bbb08f62e1ba80da41b">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\joda-time-2.9.4_a3369626d4ceca7fc5a9956172b772b69d5fcebe.jar" />
+    </item>
+    <item
+        jar="C:\projet1\App\EIMusic\app\build\intermediates\exploded-aar\com.victor\lib\1.0.4\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8b534207608aa1c205263d7426e634872ae34f08">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\com.victor-lib-1.0.4_86645fb4ff916ac4a3fb795d4e93cbbffe9a1af4.jar" />
+    </item>
+    <item
+        jar="C:\projet1\App\EIMusic\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\com.android.support-support-v4-23.4.0_9d82c168c75705416df1600f8d9fc6cc8a2c69ce.jar" />
+    </item>
+    <item
+        jar="C:\projet1\App\EIMusic\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\com.android.support-appcompat-v7-23.4.0_a77b0947cfb2b7477d2c2401f5600ec0e49a951d.jar" />
+    </item>
+    <item
+        jar="C:\projet1\App\EIMusic\app\build\intermediates\exploded-aar\com.github.lzyzsd\circleprogress\1.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e6f9fb0d2ea982d656d6dca785a9097659395874">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\com.github.lzyzsd-circleprogress-1.1.0_79d315830a1e803590f7bf7abd5f799b1295f84b.jar" />
+    </item>
+    <item
+        jar="C:\projet1\App\EIMusic\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\com.android.support-support-vector-drawable-23.4.0_23fcab84f35583cb8adddda7fba6c07d04f901bb.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sumir\.gradle\caches\modules-2\files-2.1\com.mpatric\mp3agic\0.8.4\815496cbee084b92ee843450a5627cc1a7206f8a\mp3agic-0.8.4.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="815496cbee084b92ee843450a5627cc1a7206f8a">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\mp3agic-0.8.4_ce34344f1880b1d0f1ada855ddf4786a3050ad8a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sumir\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\1.3.9\40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf\jsr305-1.3.9.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\jsr305-1.3.9_7fe846a8d1db32fec1ab85444445668059356377.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sumir\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client\1.22.0\d441fc58329c4a4c067acec04ac361627f66ecc8\google-http-client-1.22.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d441fc58329c4a4c067acec04ac361627f66ecc8">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\google-http-client-1.22.0_7cc72e9b32e3d8180b7ff0587732eb22ffcd0f78.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sumir\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\picasso-2.5.2_4448deb7791a0ae78a601bea3b67b597e2521c8d.jar" />
+    </item>
+    <item
+        jar="C:\projet1\App\EIMusic\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a2af9c72ccaa4c5c049b500ca6ea664a4ce1f7d4">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\de.hdodenhof-circleimageview-2.1.0_0462b8fb2ec994140daf08679e1ab90b04e1be76.jar" />
+    </item>
+    <item
+        jar="C:\projet1\App\EIMusic\app\build\intermediates\exploded-aar\com.github.dmytrodanylyk.circular-progress-button\library\1.1.3\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8a6ed980c74ad35b2dfc4e1daf97bfc0eea5d7c9">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\com.github.dmytrodanylyk.circular-progress-button-library-1.1.3_0f865bc44eb20094c4e721f5df6be6a41836aa5d.jar" />
+    </item>
+    <item
+        jar="C:\projet1\App\EIMusic\app\libs\gson-2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="120561417305d813db1ee996facc814b0a84be20">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\gson-2.0_2e8fae32b5ce50dfda4b7309954eba74d7dacd38.jar" />
+    </item>
+    <item
+        jar="C:\projet1\App\EIMusic\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\com.android.support-recyclerview-v7-23.4.0_a5bfabbd7016e7b2c7c38dcb6da027ec2dcbd60a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sumir\.gradle\caches\modules-2\files-2.1\com.google.guava\guava-jdk5\17.0\463f8378feba44df7ba7cd9272d01837dad62b36\guava-jdk5-17.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="463f8378feba44df7ba7cd9272d01837dad62b36">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\guava-jdk5-17.0_e854c89135e18a6e15fe90369a74a4919dc4e535.jar" />
+    </item>
+    <item
+        jar="C:\projet1\App\EIMusic\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\com.android.support-animated-vector-drawable-23.4.0_dd3e5027744b0b391a09a9d6d53f35c66487c7d8.jar" />
+    </item>
+    <item
+        jar="C:\projet1\App\EIMusic\app\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\com.android.support-design-23.4.0_214cb153766b4bd91b42726c97377104551f685f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sumir\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client\1.22.0\244350c0c845c583717ade13f5666a452fd0cfa\google-api-client-1.22.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="0244350c0c845c583717ade13f5666a452fd0cfa">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\google-api-client-1.22.0_4bfa0603c9ec2b367a59144635f8903e7af753f3.jar" />
+    </item>
+    <item
+        jar="C:\projet1\App\EIMusic\app\libs\YouTubeAndroidPlayerApi.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="3c4f96ff493456651cc7bdb0b47e10eb25545a16">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\YouTubeAndroidPlayerApi_1686de77f95f1540ddf63e84096906f34c2efa04.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sumir\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client\1.22.0\1d63f369ac78e4838a3197147012026e791008cb\google-oauth-client-1.22.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1d63f369ac78e4838a3197147012026e791008cb">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\google-oauth-client-1.22.0_bb6fa446d232879aa3fb306b2178484f57c076ed.jar" />
+    </item>
+    <item
+        jar="C:\projet1\App\EIMusic\app\libs\jsoup-1.9.2.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="28e5375920a4f6e73123e45ab6ad3b8bc93b0869">
+        <dex dex="C:\projet1\App\EIMusic\app\build\intermediates\pre-dexed\release\jsoup-1.9.2_09b59b9a940614eb8a4875ce4217fdd32ef23b7e.jar" />
+    </item>
+
+</items>

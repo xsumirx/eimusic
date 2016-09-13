@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.elexidea.eimusic.TagEDIT">
+
+
+    <LinearLayout
+        android:id="@+id/tagEditor_container1"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+
+
+        <EditText
+            android:id="@+id/editFieldAlbumArtQuery"
+            android:background="@color/colorPrimaryLight"
+            android:paddingLeft="10dp"
+            android:text="album or artist ..."
+            android:textColor="@color/cpb_white"
+            android:layout_weight="0.2"
+            android:textColorHighlight="#fff"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="0.8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:id="@+id/btnAlbumArtSearch"
+                android:background="@color/colorPrimaryDark"
+                android:src="@drawable/ic_search_24dp"
+                android:layout_width="match_parent"
+                android:layout_height="48dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@+id/tagEditor_container1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <GridView
+            android:verticalSpacing="8dp"
+            android:stretchMode="spacingWidthUniform"
+            android:id="@+id/gridViewAlbumArt"
+            android:numColumns="auto_fit"
+            android:columnWidth="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+
+</RelativeLayout>
